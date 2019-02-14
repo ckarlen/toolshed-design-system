@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+html {
+    --color-primary-red: #b71c1c;
+    --color-secondary-red: #f05545;
+    --color-primary-brown: #826133;
+    --color-secondary-brown: #b48e5e;
+    --color-primary-blue: #0b1051;
+    --color-secondary-blue: #3f367e;
+    --color-primary-text: #4b636e;
+    --color-secondary-text: #90a4ae;
+    --color-additional-text: #eeeeee;
+}
+
+/* ==========================================================================
+   Type
+   ========================================================================== */
+html {
+    --font-primary: Overpass, Arial, sans-serif;
+    color: var(--color-primary-text);
+    font-family: var(--font-primary);
+    line-height: 1.4;
+}
+
+main {
+    max-width: 40rem;
+}
+
+h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+p   {
+    font-size: 1rem;
+}
+
+a {
+    color: var(--color-primary-red);
+}
+
+/* ==========================================================================
+   Header Component
+   ========================================================================== */
+
+.site-header {
+    background-color: var(--color-secondary-brown);
+    border: 2rem solid #b48e5e;
+}
+
+.logo {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Footer Component
+   ========================================================================== */
+
+footer {
+	background-color: var(--color-secondary-brown);
+    border: 2rem solid #b48e5e;
+}
