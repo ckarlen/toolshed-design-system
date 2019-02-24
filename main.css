@@ -18,51 +18,102 @@ html {
    ========================================================================== */
 html {
     --font-primary: Overpass, Arial, sans-serif;
+    --ratio: 1.333;
+    --size-one: 1rem;
+    --size-two: calc(1rem*1.333);
+    --size-three: calc(1rem*1.777);
+    --size-four: calc(1rem*2.369);
+    --size-five: calc(1rem*3.157);
+    --size-six: calc(1rem*4.209);
+    --size-minimum: calc(1rem*.75);
     color: var(--color-primary-text);
     font-family: var(--font-primary);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 main {
-    max-width: 40rem;
+    max-width: 42rem;
 }
+    h1, h2, h3, h4, h5, h6{
+    line-height: 1.4;
+    margin: 1em 0 0;
+    }
 
 h1 {
-    font-size: 2.75rem;
+    font-size: var(--size-five);
     font-weight: 700;
     
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: var(--size-four);
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-size: var(--size-three);
 }
 
-p   {
-    font-size: 1rem;
+h4 {
+    font-size: var(--size-two);
+    font-style: bold;
+}
+
+p {
+    font-size: var(--size-one);
+    margin: 0;
+}
+
+ul {
+    font-size: var(--size-two);
+    margin-left: 2rem;
+}
+
+ol {font-size: var(--size-two);
+    margin-left: 2rem;
+}
+
+.price {
+    font-size: var(--size-one);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+figcaption {
+    font-size: var(--size-minimum);
+    font-style: italic;
+    line-height: 1;
 }
 
 a {
     color: var(--color-primary-red);
 }
+a:link {
+    color: var(--color-primary-red);
+}
+a:visited {
+    color: var(--color-primary-red);
+}
+a:hover {
+    color: var(--color-primary-blue);
+}
+a:active {
+    color: var(--color-secondary-blue);
+}
 
 /* ==========================================================================
    Header Component
-   ========================================================================== */
+   ========================================================================= */
+
+.logo {
+    font-size: var(--size-six);
+    font-weight: 700;
+    line-height: 1.2;
+}
 
 .site-header {
     background-color: var(--color-secondary-brown);
     border: 2rem solid #b48e5e;
 }
-
-.logo {
-    font-size: 3.5rem;
-    font-weight: 700;
-}
-
 /* ==========================================================================
    Footer Component
    ========================================================================== */
@@ -70,4 +121,6 @@ a {
 footer {
 	background-color: var(--color-secondary-brown);
     border: 2rem solid #b48e5e;
+    font-size: var(--size-minimum);
+    line-height: 1.4;
 }
