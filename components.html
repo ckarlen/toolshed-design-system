@@ -27,7 +27,116 @@
 <main>
 
     <h1>Power(ful) Components</h1>
+    
+    <h2>Button Links</h2>
+    
+    <h3>The Hero Button</h3>
 
+    <figure>
+        <button class="button-link-primary" href="#">Hero</button>
+        
+        <figcaption>Used for primary tasks and calls to action, such as "Buy Now". </figcaption>
+        
+      </figure>
+    
+     
+    <h3>The Secondary Button</h3>
+    
+    <figure>
+        <button class="button-link-secondary" href="#">Secondary</button>
+        
+        <figcaption>We use this for secondary commands and neutral states, such as "Information" or "Next Page".</figcaption>
+    </figure>
+    
+    <h3>The Tertiary Button</h3>
+    
+    <figure>
+        <button class="button-link-tertiary" href="#">Tertiary</button>
+        
+        <figcaption>Used for company and background information, such as Disclaimers and Statements and Press Releases.</figcaption>
+    </figure>
+    
+    <h2>Accordions</h2>
+
+    <p>We use accordion lists for information that is best displayed in a cascade, like FAQs and glossaries.</p>
+    
+    
+    <details>
+        
+        <summary>
+            Tool Categories
+        </summary>
+        
+        <div>
+            <ul>
+                <li><a class="accordion-list-item" href="#">Carpentry and Woodworking</a></li>
+            
+                <li><a class="accordion-list-item" href="#">Concrete and Masonry</a></li>
+            
+                <li><a class="accordion-list-item" href="#">Electrical and Lighting</a></li>
+            
+                <li><a class="accordion-list-item" href="#">Plumbing</a></li>
+            </ul>
+        </div>
+    
+    </details>
+
+    <details>
+        <summary>
+            Membership Options
+        </summary>
+        
+        <div>
+            <ul>
+                <li><a class="accordion-list-item" href="#">Household Membership</a></li>
+            
+                <li><a class="accordian-list-item" href="#">Small Business Membership</a></li>
+            
+                <li><a class="accordian-list-item" href="#">Student Membership</a></li>
+            
+                <li><a class="accordian-list-item" href="#">Non-Profit Membership</a></li>
+            </ul>
+        </div>
+    
+    </details>
+    
+    <details>
+        <summary>
+            Frequently Asked Questions
+        </summary>
+        
+        <div>
+            <ul>
+                <li><a class="accordion-list-item" href="#">How Can I Join?</a></li>
+            
+                <li><a class="accordian-list-item" href="#">How Do I Rent Tools?</a></li>
+            
+                <li><a class="accordian-list-item" href="#">What If I Need Instructions?</a></li>
+            
+                <li><a class="accordian-list-item" href="#">What If I Lose or Damage a Tool?</a></li>
+            </ul>
+        </div>
+    </details>
+    
+    <h2>Modal Dialogs</h2>
+    <p>Modal dialogs are for forms, pop up information and other alerts that need the users attention.</p>
+    
+    <div class="example">
+        <p>Example Menu</p>
+    </div> 
+    
+    <button id="open-modal" type="button">Open Modal</button>
+
+    <dialog id="modal-demo">
+        <modal-header>Please Be Aware</modal-header>
+        
+        <modal-content>You must be 18 years of age or older to check out tools from our tool library.</modal-content>
+        
+          <span class="close" id="span2">&times;</span>
+        
+        
+    </dialog>
+    
 </main>
     
 <footer>
@@ -47,5 +156,27 @@
 
 </footer>
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+
+        const modal = document.querySelector('dialog');
+        const open = document.getElementById('open-modal');
+
+        open.addEventListener('click', () => {
+            modal.showModal();
+        });
+
+        modal.addEventListener('click', event => {
+            if (event.target === modal) {
+                modal.close('cancelled');
+            }
+        });
+
+    });
+</script>
+
+    
 </body>
+    
 </html>

@@ -3,16 +3,252 @@
    ========================================================================== */
 html {
     --color-primary-red: #b71c1c;
-    --color-secondary-red: #f05545;
-    --color-primary-brown: #826133;
-    --color-secondary-brown: #b48e5e;
     --color-primary-blue: #0b1051;
+    --color-primary-brown: #826133;
+    --color-secondary-red: #f05545;
     --color-secondary-blue: #3f367e;
+    --color-secondary-brown: #b48e5e;
     --color-primary-text: #4b636e;
     --color-secondary-text: #90a4ae;
     --color-additional-text: #eeeeee;
 }
 
+/* ==========================================================================
+   Components
+    ========================================================================== */
+
+detail {
+    font-size: var(--size-two);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.button-link-primary {
+    background-color: var(--color-primary-red);
+	border: 3px solid var(--color-primary-red);
+	box-shadow: .25rem .25rem rgba(255, 255, 255, .5);
+    color: white;
+	display: inline-block;
+    font-size: var(--size-one);
+	font-weight: 700;
+	margin: 1rem;
+	padding: .75rem 1rem;
+    position: relative;
+    text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 2s;
+}
+
+
+.button-link-primary:focus {
+    background-color: var(--color-primary-red);
+    border: 3px solid var(--color-primary-red);
+    outline: 6px solid blue;
+    transition: all 2s;
+}
+
+
+.button-link-primary:hover {
+    background-color: var(--color-secondary-red);
+    border: 3px solid var(--color-secondary-red);
+}
+
+.button-link-primary:active {
+    background-color: var(--color-secondary-red);
+	border: 3px solid var(--color-secondary-red);
+    /*transform: translateY(3px);*/
+    top: 3px;
+}
+
+.button-link-secondary {
+    background-color: var(--color-primary-blue);
+    border: 3px solid var(--color-primary-blue);
+    box-shadow: .25rem .25rem rgba(255, 255, 255, .5);
+    color: white;
+    display: inline-block;
+    font-size: var(--size-one);
+    font-weight: 700;
+    margin: 1rem;
+    padding: .75rem 1rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 2s;
+}
+
+.button-link-secondary:focus {
+    background-color: var(--color-primary-blue);
+    border: 3px solid var(--color-primary-blue);
+    outline: 6px solid blue;
+    transition: all 2s;
+}
+
+.button-link-secondary:hover {
+    background-color: var(--color-secondary-blue);
+    border: 3px solid var(--color-secondary-blue);
+}
+
+.button-link-secondary:active {
+    background-color: var(--color-secondary-blue);
+    border: 3px solid var(--color-secondary-blue);
+    /*transform: translateY(3px);*/
+    top: 3px;
+}
+
+.button-link-tertiary {
+    background-color: var(--color-primary-brown);
+    border: 3px solid var(--color-primary-brown);
+    box-shadow: .25rem .25rem rgba(255, 255, 255, .5);
+    color: white;
+    display: inline-block;
+    font-size: var(--size-one);
+    font-weight: 700;
+    margin: 1rem;
+    padding: .75rem 1rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 2s;
+}
+
+.button-link-tertiary:focus {
+    background-color: var(--color-primary-brown);
+    border: 3px solid var(--color-primary-brown);
+    outline: 6px solid blue;
+    transition: all 2s;
+}
+
+.button-link-tertiary:hover {
+    background-color: var(--color-secondary-brown);
+    border: 3px solid var(--color-secondary-brown);
+}
+
+.button-link-tertiary:active {
+    background-color: var(--color-secondary-brown);
+    border: 3px solid var(--color-secondary-brown);
+    /*transform: translateY(3px);*/
+    top: 3px;
+}
+
+summary button {
+    background-color: white;
+    color: var(--color-primary-text);
+    font-size: var(--size-two);
+    font-weight: 900;
+    margin: 0;
+    padding: 1rem;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+summary:focus, details[open] summary {
+	background-color: var(--color-additional-text);
+	outline: none;
+}
+
+summary::-webkit-details-marker {
+	background-image: url(https://material.io/tools/icons/?icon=label&style=baseline);
+    color: black;
+}
+
+details[open] summary::-webkit-details-marker {
+	background-image: url(https://material.io/tools/icons/?icon=label&style=baseline);
+}
+
+details {
+    border: 1px solid var(--color-secondary-brown);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+	padding: 1rem;
+}
+
+details summary {
+    font-size: var(--size-two);
+    font-weight: 600;
+}
+
+
+
+/* ==========================================================================
+   Modal Dialog Components
+   ========================================================================== */
+
+.example {
+    border: 2px solid;
+    color: var(--color-secondary-brown);
+    margin-top: 2rem;
+    padding: .75rem 1rem;
+}
+
+#open-modal {
+    margin-bottom: 2rem;
+}
+
+@-webkit-keyframes slideIn {
+	from {
+		transform: translatex(-100%);
+	}
+	
+	to {
+		transform: translatex(-50%);
+	}
+}
+
+
+dialog {
+    border: 2px solid grey;
+    color: var(--color-primary-text);
+    display: inline-block;
+    height: 175px;
+    margin: auto;
+    max-height: 100%;
+    padding: 0 0 1.5rem;
+    position: fixed;
+    width: 400px;
+}
+
+dialog[open] {
+    animation: slideIn .5s linear;
+}
+
+dialog::backdrop {
+    background: rgba(25,65,105,.25);
+}
+
+modal-header {
+    background: 10px var(--color-secondary-brown);
+    color: var(--color-primary-red);
+    display: block;
+    font-size: var(--size-three);
+    font-weight: 900;
+    padding: 1rem 1rem .75rem;
+}
+
+modal-content {
+    color: var(--color-primary-text);
+    display: block;
+    font-size: var(--size-one);
+    line-height; 1.5;
+    padding: 2rem .75rem 0;
+    
+}
+
+.close {
+    color: #ccc;
+    float: right;
+    font-size: 34px;
+    font-weight: bold;
+    margin-right: 2rem;
+}
+
+.close:hover {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
 /* ==========================================================================
    Type
    ========================================================================== */
@@ -34,6 +270,7 @@ html {
 main {
     max-width: 42rem;
 }
+
     h1, h2, h3, h4, h5, h6{
     line-height: 1.4;
     margin: 1em 0 0;
@@ -51,6 +288,11 @@ h2 {
 
 h3 {
     font-size: var(--size-three);
+}
+
+h3 figure {
+    line-height: 1;
+    margin: auto;
 }
 
 h4 {
@@ -84,20 +326,23 @@ figcaption {
     line-height: 1;
 }
 
-a {
-    color: var(--color-primary-red);
-}
+
 a:link {
     color: var(--color-primary-red);
 }
 a:visited {
     color: var(--color-primary-red);
 }
+
 a:hover {
     color: var(--color-primary-blue);
 }
 a:active {
     color: var(--color-secondary-blue);
+}
+
+a:focus {
+    outline: 1px solid blue;
 }
 
 /* ==========================================================================
@@ -109,11 +354,12 @@ a:active {
     font-weight: 700;
     line-height: 1.2;
 }
-
+    
 .site-header {
     background-color: var(--color-secondary-brown);
     border: 2rem solid #b48e5e;
 }
+
 /* ==========================================================================
    Footer Component
    ========================================================================== */
@@ -123,4 +369,5 @@ footer {
     border: 2rem solid #b48e5e;
     font-size: var(--size-minimum);
     line-height: 1.4;
+    margin-top: 2;
 }
