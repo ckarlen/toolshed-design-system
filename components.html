@@ -17,7 +17,7 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="style.html">Style</a></li>
-            <li><a href="components.html">Components</a></li>
+            <li><a href="" class="current-page">Components</a></li>
             <li><a href="layouts.html">Layout</a></li>
         </ul>
     </nav>
@@ -121,21 +121,107 @@
     <h2>Modal Dialogs</h2>
     <p>Modal dialogs are for forms, pop up information and other alerts that need the users attention.</p>
     
-    <div class="example">
-        <p>Example Menu</p>
-    </div> 
-    
     <button id="open-modal" type="button">Open Modal</button>
 
     <dialog id="modal-demo">
-        <modal-header>Please Be Aware</modal-header>
+        <h3>Please Be Aware</h3>
         
-        <modal-content>You must be 18 years of age or older to check out tools from our tool library.</modal-content>
-        
-          <span class="close" id="span2">&times;</span>
-        
+        <p>You must be 18 years of age or older to check out tools from our tool library.</p>
         
     </dialog>
+    
+    <h2>Form Inputs</h2>
+
+    <form action="instructions.js">
+
+        <h3>Text Boxes</h3>
+
+        <label for="search-name">Product Search - Text Entry Example</label>
+        <input type="text" id="search-name" name="search-name" placeholder="Enter search name" required>
+
+        <label for="search-name">Product Search - Error State</label>
+        <input type="text" required id="search-name" name="search-name" placeholder="Entry required" class="error">
+
+        <label for="search-name">Product Search - Disabled State</label>
+        <input type="text" required id="search-name" name="search-name" placeholder="Search not available" disabled>
+
+        <h3>Text Areas</h3>
+
+        <label for="suggestion">Suggestion Box - Text Entry Example</label>
+        <textarea id="suggestion" name="suggestion" placeholder="Suggestions, comments, ideas"></textarea>
+        
+        <label for="suggestion">Suggestion Box - Error State</label>
+        <textarea id="suggestion" name="suggestion" placeholder="Error" class="error"></textarea>
+
+        <label for="suggestion">Suggestion Box - Disabled State</label>
+        <textarea id="suggestion" name="suggestion" placeholder="Not available" disabled></textarea>
+
+        <h3>Selectors</h3>
+        
+        <label for="rental-time">Rental Time - Selection</label>
+        <p class="hint-text">Check our Rental FAQ page for more information</p>
+        <select id="rental-time" name="rental-time">
+            <option value="" selected disabled hidden>Choose</option> 
+            <option>1 week</option>
+            <option>2 weeks</option>
+            <option>3 weeks</option>
+        </select>
+
+        <label for="rental-time">Rental Time - Error State</label>
+        <p class="hint-text-error">You must choose one option</p>
+        <select id="rental-time" name="rental-time" class="error">
+            <option value="" selected disabled hidden>Choose</option> 
+            <option>1 week</option>
+            <option>2 weeks</option>
+            <option>3 weeks</option>
+        </select>
+    
+        <label for="rental-time">Rental Time - Selection - Disabled</label>
+        <p class="hint-text-disabled">Selection available at this time</p>
+        <select id="rental-time" name="rental-time" disabled>
+            <option value="" selected disabled hidden>Choose</option> 
+            <option>1 week</option>
+            <option>2 weeks</option>
+            <option>3 weeks</option>
+        </select>
+
+        <h3>Submit &#47; Button</h3>
+   
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Navigation</h2>
+    
+    <h3>Primary Navigation Menu</h3>
+    <figure>
+        <nav class="site-navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="style.html">Style</a></li>
+            <li><a href="" class="current-page">Components</a></li>
+            <li><a href="layouts.html">Layout</a></li>
+        </ul>
+        </nav>
+    </figure>
+
+    <h3>Secondary Navigation Menu</h3>
+    <figure>
+        <nav class="secondary-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="style.html">Style</a></li>
+            <li><a href="" class="current-page">Components</a>
+                <ul>
+                    <li><a href="">Buttons</a></li>
+                    <li><a href="">Accordions</a></li>
+                    <li><a href="">Modal Dialogs</a></li>
+                </ul>
+            </li>
+            <li><a href="layouts.html">Layout</a></li>
+        </ul>
+        </nav>
+    
+    </figure>
     
 </main>
     

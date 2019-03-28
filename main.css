@@ -2,15 +2,76 @@
    Colors
    ========================================================================== */
 html {
-    --color-primary-red: #b71c1c;
+    --color-primary-red: #ef445b;
     --color-primary-blue: #0b1051;
-    --color-primary-brown: #826133;
-    --color-secondary-red: #f05545;
+    --color-primary-brown: #ca9a2c;
+    --color-secondary-red: #ff7988;
     --color-secondary-blue: #3f367e;
-    --color-secondary-brown: #b48e5e;
-    --color-primary-text: #4b636e;
-    --color-secondary-text: #90a4ae;
-    --color-additional-text: #eeeeee;
+    --color-secondary-brown: #ffcb5d;
+    --color-primary-text: #000031;
+    --color-secondary-text: #2b476b;
+    --color-additional-text: #f4faff;
+}
+
+/* ==========================================================================
+   Navigation
+    ========================================================================== */
+
+.site-navigation a {
+    font-size: var(--size-two);
+    font-weight: 700;
+    line-height: 2;
+}
+
+.site-navigation li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 3rem;
+    position: relative;
+}
+
+.site-navigation .current-page {
+    color: var(--color-secondary-blue);
+}
+
+a {
+    color: var(--color-primary-red);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--color-primary-red);
+}
+
+a:hover {
+    color: var(--color-primary-blue);
+}
+
+a:active {
+    color: var(--color-secondary-blue);
+}
+
+a:focus {
+    outline: 1px solid blue;
+}
+
+
+.secondary-nav a {
+    font-size: var(--size-one);
+    font-weight: 600;
+}
+
+.secondary-nav .current-page {
+    color: var(--color-secondary-blue);
+}
+.secondary-nav li {
+    display: block;
+    line-height: 2;
+}
+
+.secondary-nav ul ul a {
+    font-size: var(--size-minimum);
+    font-weight: 300;
 }
 
 /* ==========================================================================
@@ -39,7 +100,6 @@ detail {
 	text-transform: uppercase;
 	transition: all 2s;
 }
-
 
 .button-link-primary:focus {
     background-color: var(--color-primary-red);
@@ -176,18 +236,12 @@ details summary {
    Modal Dialog Components
    ========================================================================== */
 
-.example {
-    border: 2px solid;
-    color: var(--color-secondary-brown);
-    margin-top: 2rem;
-    padding: .75rem 1rem;
-}
-
 #open-modal {
+    margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
-@-webkit-keyframes slideIn {
+@keyframes slideIn {
 	from {
 		transform: translatex(-100%);
 	}
@@ -196,7 +250,6 @@ details summary {
 		transform: translatex(-50%);
 	}
 }
-
 
 dialog {
     border: 2px solid grey;
@@ -218,16 +271,17 @@ dialog::backdrop {
     background: rgba(25,65,105,.25);
 }
 
-modal-header {
+dialog h3 {
     background: 10px var(--color-secondary-brown);
     color: var(--color-primary-red);
     display: block;
     font-size: var(--size-three);
     font-weight: 900;
+    margin-top: 0;
     padding: 1rem 1rem .75rem;
 }
 
-modal-content {
+dialog p {
     color: var(--color-primary-text);
     display: block;
     font-size: var(--size-one);
@@ -250,11 +304,104 @@ modal-content {
     text-decoration: none;
 }
 /* ==========================================================================
-   Type
+   Form Inputs
+   ========================================================================== */
+
+input[type="text"], textarea, select {
+    border: 1px solid var(--color-secondary-brown);
+    border-radius: 3px;
+    box-shadow: none;
+    color: var(--color-primary-text);
+    display: block;
+    font-size: var(--size-one);
+    height: 1.5rem;
+    margin: 5px 0 15px;
+    outline: none;
+    padding: .5rem;
+    width: 21rem;
+}
+
+textarea {
+    min-height: 8rem;
+}
+
+select {
+    font-family: var(--font-primary);
+    height: 2.5rem;
+}
+
+input:focus, textarea:focus {
+    background: var(--color-secondary-brown); 
+    color: black;
+}
+
+input.error, textarea.error, select.error {
+    background: none;
+    border: 1px dotted red;
+}
+
+input[disabled], textarea[disabled], select[disabled] {
+    border: 1px dotted darkgrey;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--color-secondary-text);
+  font-family: var(--font-primary);
+}
+
+.hint-text, .hint-text-error, .hint-text-disabled {
+    color: var(--color-secondary-brown);
+    font-size: var(--size-half);
+    margin-left: .25rem;
+}
+
+.hint-text-error {
+    color: red;
+}
+
+.hint-text-disabled {
+    color: grey;
+}
+
+button[type="submit"], input[type="submit"] {
+    background-color: green;
+    border: none;
+    box-shadow: .25rem .25rem rgba(255, 255, 255, .5);
+    color: white;
+    display: block;
+    font-size: var(--size-one);
+    font-weight: 700;
+    height: 2.5rem;
+    margin: 1.25rem;
+	padding: .75rem 1rem;
+    position: relative;
+    text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+button:active {
+    background-color: var(--color-secondary-brown);
+}
+
+button:focus {
+    background-color: var(--color-primary-brown);
+    border: 3px solid var(--color-primary-brown);
+    border-radius: none;
+    outline: 6px solid blue;
+}
+
+/* ==========================================================================
+   Typography
    ========================================================================== */
 html {
     --font-primary: Overpass, Arial, sans-serif;
     --ratio: 1.333;
+    --size-half: calc(1rem*.75);
     --size-one: 1rem;
     --size-two: calc(1rem*1.333);
     --size-three: calc(1rem*1.777);
@@ -264,100 +411,108 @@ html {
     --size-minimum: calc(1rem*.75);
     color: var(--color-primary-text);
     font-family: var(--font-primary);
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 main {
-    max-width: 42rem;
+    max-width: 48rem;
 }
 
-    h1, h2, h3, h4, h5, h6{
-    line-height: 1.4;
-    margin: 1em 0 0;
-    }
+h1, h2, h3, h4, h5, h6{
+    line-height: 1;
+    margin-bottom: .25rem;
+}
 
 h1 {
-    font-size: var(--size-five);
-    font-weight: 700;
-    
+    font-size: var(--size-six);
+    font-weight: 800;
 }
 
 h2 {
-    font-size: var(--size-four);
+    font-size: var(--size-five);
+    font-weight: 700;
 }
 
 h3 {
-    font-size: var(--size-three);
+    font-size: var(--size-four);
+    font-weight: 600;
 }
 
 h3 figure {
     line-height: 1;
-    margin: auto;
+    margin: 0;
 }
 
-h4 {
+blockquote {
+    color: var(--color-secondary-text);
     font-size: var(--size-two);
-    font-style: bold;
+    font-weight: 700;
 }
 
 p {
-    font-size: var(--size-one);
     margin: 0;
 }
 
 ul {
-    font-size: var(--size-two);
-    margin-left: 2rem;
+    font-weight: 700;
+    list-style-position: inside;
+    list-style-type: disc;
 }
 
-ol {font-size: var(--size-two);
-    margin-left: 2rem;
+ul li {
+    font-weight: 400;
+    margin-left: 1rem;
 }
 
-.price {
+ul ul li {
+    font-weight: 400;
+    list-style-type: circle;
+}
+
+ol {
     font-size: var(--size-one);
-    font-weight: 900;
-    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.5;
+    list-style-position: inside;
+    margin-left: 2.25rem;
 }
 
-figcaption {
-    font-size: var(--size-minimum);
+ol li {
+    font-weight: 400;
+    margin-left: 1rem;
+}
+
+ol ol li {
+    list-style-type: lower-roman;
+    margin-left: -.75rem;
+}
+
+.featurecopy {
+    font-size: var(--size-two);
+    font-weight: 400;
     font-style: italic;
-    line-height: 1;
+}
+.tertiarycopy, figcaption{
+    font-size: var(--size-minimum);
+    font-weight: 300;
 }
 
-
-a:link {
-    color: var(--color-primary-red);
-}
-a:visited {
-    color: var(--color-primary-red);
-}
-
-a:hover {
-    color: var(--color-primary-blue);
-}
-a:active {
-    color: var(--color-secondary-blue);
-}
-
-a:focus {
-    outline: 1px solid blue;
-}
 
 /* ==========================================================================
    Header Component
    ========================================================================= */
 
 .logo {
+    color: var(--color-secondary-text);
     font-size: var(--size-six);
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1.2;
 }
     
 .site-header {
-    background-color: var(--color-secondary-brown);
-    border: 2rem solid #b48e5e;
+    background-color: var(--color-primary-brown);
+    border: 2rem solid var(--color-primary-brown);
+    margin-bottom: 0;
 }
 
 /* ==========================================================================
@@ -365,9 +520,138 @@ a:focus {
    ========================================================================== */
 
 footer {
-	background-color: var(--color-secondary-brown);
-    border: 2rem solid #b48e5e;
-    font-size: var(--size-minimum);
+	background-color: var(--color-secondary-blue);
+    border: 2rem solid var(--color-secondary-blue);
+    color: var(--color-additional-text);
     line-height: 1.4;
-    margin-top: 2;
+    margin-top: 40px;
+}
+
+footer li {
+    font-size: var(--size-two);
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+
+@media (min-width: 400px) {
+    html {
+    /*--ratio: 1.200;*/
+    --size-half: calc(1rem*.75);
+    --size-one: 1rem;
+    --size-two: calc(1rem*1.200);
+    --size-three: calc(1rem*1.44);
+    --size-four: calc(1rem*1.728);
+    --size-five: calc(1rem*2.074);
+    --size-six: calc(1rem*2.488);
+    --size-minimum: calc(1rem*.75);
+    }
+    
+    .logo {
+        font-size: calc(1rem*3.157);
+    }
+    
+     .site-header {
+        border: 1.25rem solid var(--color-primary-brown);
+        margin-bottom: 0;
+    }
+    .site-navigation li {
+         display: block;
+         font-weight: 600;
+         line-height: 1.8;
+    }
+    
+    .secondary-nav li {
+        line-height: 1.8;
+    }
+    
+    input[type="text"], textarea, select {
+        width: 23rem;
+    }
+}
+
+
+@media (min-width: 600px) {
+    html {
+    /*--ratio: 1.333*/
+    --size-half: calc(1rem*.75);
+    --size-one: 1rem;
+    --size-two: calc(1rem*1.333);
+    --size-three: calc(1rem*1.777);
+    --size-four: calc(1rem*2.369);
+    --size-five: calc(1rem*3.157);
+    --size-six: calc(1rem*4.209);
+    --size-minimum: calc(1rem);
+    }
+        
+    .logo {
+        font-size: var(--size-six);
+        }
+    
+    .site-navigation a {
+        font-size: var(--size-three);
+        font-weight: 700;
+    }
+    .site-navigation li {
+        margin-right: 1.8;
+    }
+    .secondary-nav a {
+        font-size: var(--size-two);
+    }
+    .secondary-nav li {
+        line-height: 1.9;
+    }
+    
+    .tertiary-nav a {
+        font-size: var(--size-one);
+    }
+    
+    input[type="text"], textarea, select {
+        width: 28rem;
+    }
+}
+
+@media (min-width: 800px) {
+    
+    .site-navigation li {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 1000px) {
+    
+    main {
+        max-width: 60rem;
+    }
+    
+    input[type="text"], textarea, select {
+        width: 48rem;
+    }
+    
+    .site-navigation a {
+        font-size: var(--size-four);
+        font-weight: 900;
+    }
+    
+    .site-navigation li {
+        margin-right: 3rem;
+    }
+    
+    .secondary-nav a {
+        font-size: var(--size-three);
+    }
+    
+    .tertiary-nav a {
+        font-size: var(--size-two);
+    }
+}
+
+@media (min-width: 1400px) {
+    
+    html {
+        font-size: 17px;
+    }
 }
