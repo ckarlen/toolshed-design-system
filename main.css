@@ -9,7 +9,7 @@ html {
     --color-secondary-blue: #3f367e;
     --color-secondary-brown: #ffcb5d;
     --color-primary-text: #000031;
-    --color-secondary-text: #2b476b;
+    --color-secondary-text: #69829b;
     --color-additional-text: #f4faff;
 }
 
@@ -33,28 +33,6 @@ html {
 .site-navigation .current-page {
     color: var(--color-secondary-blue);
 }
-
-a {
-    color: var(--color-primary-red);
-    text-decoration: none;
-}
-
-a:visited {
-    color: var(--color-primary-red);
-}
-
-a:hover {
-    color: var(--color-primary-blue);
-}
-
-a:active {
-    color: var(--color-secondary-blue);
-}
-
-a:focus {
-    outline: 1px solid blue;
-}
-
 
 .secondary-nav a {
     font-size: var(--size-one);
@@ -84,7 +62,7 @@ detail {
     text-transform: uppercase;
 }
 
-.button-link-primary {
+.button-link-primary, .button-link-primary:visited {
     background-color: var(--color-primary-red);
 	border: 3px solid var(--color-primary-red);
 	box-shadow: .25rem .25rem rgba(255, 255, 255, .5);
@@ -285,7 +263,7 @@ dialog p {
     color: var(--color-primary-text);
     display: block;
     font-size: var(--size-one);
-    line-height; 1.5;
+    line-height: 1.5;
     padding: 2rem .75rem 0;
     
 }
@@ -391,7 +369,7 @@ button:active {
 button:focus {
     background-color: var(--color-primary-brown);
     border: 3px solid var(--color-primary-brown);
-    border-radius: none;
+    border-radius: 0;
     outline: 6px solid blue;
 }
 
@@ -441,6 +419,31 @@ h3 {
 h3 figure {
     line-height: 1;
     margin: 0;
+}
+
+h4 {
+    font-size: var(--size-three);
+}
+
+a {
+    color: var(--color-primary-red);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--color-primary-red);
+}
+
+a:hover {
+    color: var(--color-primary-blue);
+}
+
+a:active {
+    color: var(--color-secondary-blue);
+}
+
+a:focus {
+    outline: 1px solid blue;
 }
 
 blockquote {
@@ -499,11 +502,486 @@ ol ol li {
 
 
 /* ==========================================================================
+   Notifications
+   ========================================================================= */
+
+.error-notification, .warning-notification, .neutral-notification, .success-notification {
+    align-content: center;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0;
+    min-height: 2.5rem;
+    min-width: 5rem;
+    padding: 0;
+}
+
+.error-notification h3, .warning-notification h3, .neutral-notification h3, .success-notification h3 {
+    margin-left: 1.5rem;
+    margin-top: 1.75rem;
+}
+
+.error-notification p, .warning-notification p, .neutral-notification p, .success-notification p {
+    margin-left: 1.5rem;
+}
+
+.error-notification svg, .warning-notification svg, .neutral-notification svg, .success-notification svg {
+    fill: white;
+    height: 4rem;
+    margin: 0;
+    padding: 1.75rem;
+    width: 4rem;
+}
+
+.error-notification {
+    border: 6px solid var(--color-primary-red);
+}
+
+.error-notification h3, .error-notification p {
+    color: var(--color-primary-red);
+}
+.error-notification svg {
+    background-color: var(--color-primary-red);
+}
+
+.warning-notification {
+    border: 6px solid orange;
+}
+.warning-notification h3, .warning-notification p {
+    color: orange;
+}
+
+.warning-notification svg {
+    background-color: orange;
+}
+
+.neutral-notification {
+    border: 6px solid var(--color-secondary-blue);
+}
+
+.neutral-notification h3, .neutral-notification p {
+    color: var(--color-secondary-blue);
+}
+
+.neutral-notification svg {
+    background-color: var(--color-secondary-blue);
+}
+
+.success-notification {
+    border: 6px solid green;
+}
+
+.success-notification h3, .success-notification p {
+    color: green;
+}
+
+.success-notification svg {
+    background-color: green;
+}
+
+/* ==========================================================================
+   Information Cards
+   ========================================================================= */
+.article-card, .blog-card {
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 18px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+    box-sizing: content-box;
+    max-width: 20rem;
+    padding: 1rem;
+}
+
+.article-card img, .blog-card img {
+    filter: drop-shadow(1px 2px 2px #220);
+    max-width: 100%;
+}
+
+.article-card h4, .article-card .featurecopy, .article-card cite, .blog-card h4, .blog-card .featurecopy, .blog-card cite {
+    margin: 1rem .75rem;
+}
+
+.article-card h4, .article-card cite, .blog-card h4, .blog-card cite {
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.article-card cite, .blog-card cite {
+    color: var(--color-additional-text);
+}
+
+.article-card {
+    background-color: var(--color-primary-brown);
+    border: 3px solid var(--color-primary-brown);
+}
+
+.blog-card {
+    background-color: var(--color-secondary-blue);
+    border: 3px solid var(--color-secondary-blue);
+}
+
+.blog-card .featurecopy {
+    color: lightgray;
+}
+
+.profile-card {
+    background-color: var(--color-secondary-blue);
+    border: 1px solid var(--color-secondary-blue);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    height: 28rem;
+    justify-content: flex-start;
+    max-width: 20rem;
+    padding: 0;
+}
+
+.profile-card img {
+    filter: drop-shadow(1px 2px 2px #220);
+    height: 70%;
+    padding-bottom: 1.15rem;
+}
+
+.profile-card h4, .profile-card p, .profile-card h5 {
+    color: var(--color-additional-text);
+    margin: 0 .5rem .5rem 1.5rem;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.card-action {
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+    box-sizing: content-box;
+    max-width: 24rem;
+    padding: 1.5rem;
+}
+
+.card-enroll {
+    background-color: #3f367e;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
+    box-sizing: border-box;
+}
+
+.action-textarea {
+    background-color: white;
+    box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.8);
+    opacity: 0.95;
+    padding: .5rem;
+}
+
+.card-enroll h2, .card-enroll .slogan {
+    color: var(--color-primary-brown);
+    margin: 1rem;
+    text-align: center;
+}
+
+.card-enroll h2 {
+    border-bottom: .5px solid var(--color-primary-brown);
+}
+
+.card-enroll .slogan {
+    font-size: var(--size-three);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.button-link-primary .button-action { 
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4);
+    display: block;
+    font-size: var(--size-two);
+    margin: 1rem;
+    text-align: center;
+}
+
+button-link-primary .button-link-action {
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4);
+    display: block;
+    font-size: var(--size-two);
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+}
+
+/* ==========================================================================
+   Card-Grid
+   =========================================================================
+*/
+
+.card-grid {
+    align-items: stretch;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.card-article, .card-blog {
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 18px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+    box-sizing: content-box;
+    padding: 1rem;
+    width: 22rem;
+}
+
+.card-article img, .card-blog img {
+    filter: drop-shadow(1px 2px 2px #220);
+    max-width: 100%;
+}
+
+.card-article h4, .card-article .featurecopy, .card-article cite, .card-blog h4, .card-blog .featurecopy, .card-blog cite {
+    margin: 1rem .5rem;
+}
+
+.card-article h4, .card-article cite, .card-blog h4, .card-blog cite {
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.card-article cite, .card-blog cite {
+    color: var(--color-additional-text);
+}
+
+.card-article {
+    background-color: var(--color-primary-brown);
+    border: 3px solid var(--color-primary-brown);
+}
+
+.card-blog {
+    background-color: var(--color-secondary-blue);
+    border: 3px solid var(--color-secondary-blue);
+}
+
+.card-blog .featurecopy {
+    color: lightgray;
+}
+
+@media (min-width: 200px) {
+    .card-grid {
+        align-items: center;
+        display: block;
+    }
+    
+    .card-article, .card-blog {
+        margin: 1rem;
+        max-width: 16rem;
+    }
+    
+    .card-article .featurecopy, .card-article cite, .card-blog .featurecopy, .card-blog cite {
+        display: none;
+    }
+}
+
+@media (min-width: 400px) {
+    .card-article, .card-blog {
+        max-width: 20rem;
+    }   
+    
+    .card-article .featurecopy, .card-article cite, .card-blog .featurecopy, .card-blog cite {
+        display: block;
+    }
+}
+
+@media (min-width: 800px) {
+    .card-grid {
+        align-items: stretch;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .card-article, .card-blog {
+        max-width: 20rem;
+    }   
+}
+
+@media (min-width: 2400px) {
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ==========================================================================
+   Card-Callouts
+   ========================================================================== */
+
+.callout-grid {
+    align-items: flex-start;
+    display: flex;
+    justify-items: space-between;
+    padding: 1rem;
+    width: 100%;
+}
+
+.card-action-enroll {
+    align-items: center;
+    background-color: #3f367e;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    display: flex;
+    height: 28rem;
+    justify-content: center;
+    margin: 1rem;
+    max-width: 24rem;
+    padding: 1rem;
+}
+
+.card-action-enroll .card-overlay {
+    background-color: white;
+    border: 2px solid var(--color-secondary-blue);
+    box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.8);
+    height: 24rem;
+    opacity: 0.95;
+    width: 20rem;
+}
+
+
+.card-action-enroll .card-overlay h2, .card-action-enroll .card-overlay .slogan {
+    color: var(--color-primary-brown);
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    text-align: center;
+}
+
+.card-action-enroll .card-overlay h2 {
+    border-bottom: .5px solid var(--color-primary-brown);
+}
+
+.card-action-enroll .slogan {
+    font-size: var(--size-three);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 1rem;
+}
+
+.card-action-learn {
+    align-items: center;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ca9a2c' fill-opacity='0.69'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 28rem;
+    margin: 1rem;
+    justify-content: center;
+    max-width: 24rem;
+    padding: 1rem;
+}
+
+.card-action-learn .card-overlay {
+    background-color: white;
+    border: 2px solid white;
+    box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.8);
+    height: 24rem;
+    opacity: 0.95;
+    width: 20rem;
+}
+
+.card-action-learn .card-overlay img {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.card-action-learn .card-overlay h4{
+    color: var(--color-secondary-text);
+    margin: .5rem;
+    text-align: center;
+}
+
+.card-action-recycle {
+    align-items: center;
+    background-color: #ef445b;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath fill='%23ffffff' fill-opacity='0.69' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E");
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    display: flex;
+    height: 28rem;
+    justify-content: center;
+    margin: 1rem;
+    max-width: 24rem;
+    padding: 1rem;
+}
+
+.card-action-recycle .card-overlay {
+    background-color: white;
+    box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.8);
+    height: 24rem;
+    opacity: 0.95;
+    width: 20rem;
+}
+
+.card-action-recycle .card-overlay h2, .card-action-recycle .card-overlay .slogan {
+    color: var(--color-secondary-text);
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    text-align: center;
+}
+
+.card-action-recycle .card-overlay h2 {
+    border-bottom: .5px solid var(--color-secondary-text);
+}
+
+.card-action-recycle .card-overlay .slogan {
+    font-size: var(--size-three);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 1rem;
+}
+
+.button-link-action {
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4);
+    display: block;
+    font-size: var(--size-two);
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+@media (min-width: 400px) {
+    .callout-grid {
+        align-items: flex-start;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+    }
+    
+    .card-action-enroll .card-overlay, .card-action-recycle .card-overlay, .card-action-recycle .card-overlay {
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .card-action-enroll .card-overlay h2, .card-action-recycle .card-overlay h2, .card-action-recycle .card-overlay h2 {
+        font-size: var(--size-six);
+        line-height: 1.3;
+        margin: 1rem 0;
+    }
+
+@media (min-width: 600px) {
+    .callout-grid {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-items: space-between;
+    }
+    
+    .card-action-enroll .card-overlay h2, .card-action-recycle .card-overlay h2, .card-action-recycle .card-overlay h2 {
+        font-size: var(--size-five);
+        line-height: 1;
+        margin: 1rem;
+    }
+}
+
+/* ==========================================================================
    Header Component
    ========================================================================= */
 
 .logo {
-    color: var(--color-secondary-text);
+    color: var(--color-primary-blue);
     font-size: var(--size-six);
     font-weight: 900;
     line-height: 1.2;
@@ -513,11 +991,55 @@ ol ol li {
     background-color: var(--color-primary-brown);
     border: 2rem solid var(--color-primary-brown);
     margin-bottom: 0;
+    }
+
+}
+
+
+/* ==========================================================================
+   Hero Block
+   ========================================================================== */
+
+.hero-banner {
+    align-items: flex-start;
+    background-blend-mode: soft-light;
+    background-image: url(images/tools.jpeg);
+    background-position: bottom;
+    background-size: cover;
+    box-sizing: border-box;
+    color: var(--color-primary-blue);
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    min-height: 100vh;
+    padding-left: 3rem;
+}
+
+.hero-banner h1 {
+    font-size: 12vw;
+    margin-top: 3rem;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.hero-banner p {
+    color: white;
+    font-size: 5vw;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+.button-link-hero {
+    box-shadow: 0 .15rem .15rem rgba(0, 0, 0, .3);
+    font-size: var(--size-two);
+    flex-shrink: 0;
+    margin-right: 6rem;
+    margin-top: 6rem;
+	padding: .75rem 1rem;
 }
 
 /* ==========================================================================
    Footer Component
    ========================================================================== */
+
 
 footer {
 	background-color: var(--color-secondary-blue);
@@ -571,6 +1093,17 @@ footer li {
     input[type="text"], textarea, select {
         width: 23rem;
     }
+    
+    .hero-banner {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+   .button-link-hero {
+        font-size: var(--size-one);
+        margin-top: 3rem;
+    }
 }
 
 
@@ -595,9 +1128,7 @@ footer li {
         font-size: var(--size-three);
         font-weight: 700;
     }
-    .site-navigation li {
-        margin-right: 1.8;
-    }
+    
     .secondary-nav a {
         font-size: var(--size-two);
     }
@@ -611,6 +1142,16 @@ footer li {
     
     input[type="text"], textarea, select {
         width: 28rem;
+    }
+    
+    .hero-banner {
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .button-link-hero {
+        font-size: var(--size-two);
     }
 }
 

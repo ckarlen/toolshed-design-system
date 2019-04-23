@@ -131,64 +131,68 @@
     </dialog>
     
     <h2>Form Inputs</h2>
-
-    <form action="instructions.js">
-
-        <h3>Text Boxes</h3>
-
-        <label for="search-name">Product Search - Text Entry Example</label>
-        <input type="text" id="search-name" name="search-name" placeholder="Enter search name" required>
-
-        <label for="search-name">Product Search - Error State</label>
-        <input type="text" required id="search-name" name="search-name" placeholder="Entry required" class="error">
-
-        <label for="search-name">Product Search - Disabled State</label>
-        <input type="text" required id="search-name" name="search-name" placeholder="Search not available" disabled>
-
-        <h3>Text Areas</h3>
-
-        <label for="suggestion">Suggestion Box - Text Entry Example</label>
-        <textarea id="suggestion" name="suggestion" placeholder="Suggestions, comments, ideas"></textarea>
-        
-        <label for="suggestion">Suggestion Box - Error State</label>
-        <textarea id="suggestion" name="suggestion" placeholder="Error" class="error"></textarea>
-
-        <label for="suggestion">Suggestion Box - Disabled State</label>
-        <textarea id="suggestion" name="suggestion" placeholder="Not available" disabled></textarea>
-
-        <h3>Selectors</h3>
-        
-        <label for="rental-time">Rental Time - Selection</label>
-        <p class="hint-text">Check our Rental FAQ page for more information</p>
-        <select id="rental-time" name="rental-time">
-            <option value="" selected disabled hidden>Choose</option> 
-            <option>1 week</option>
-            <option>2 weeks</option>
-            <option>3 weeks</option>
-        </select>
-
-        <label for="rental-time">Rental Time - Error State</label>
-        <p class="hint-text-error">You must choose one option</p>
-        <select id="rental-time" name="rental-time" class="error">
-            <option value="" selected disabled hidden>Choose</option> 
-            <option>1 week</option>
-            <option>2 weeks</option>
-            <option>3 weeks</option>
-        </select>
     
-        <label for="rental-time">Rental Time - Selection - Disabled</label>
-        <p class="hint-text-disabled">Selection available at this time</p>
-        <select id="rental-time" name="rental-time" disabled>
-            <option value="" selected disabled hidden>Choose</option> 
-            <option>1 week</option>
-            <option>2 weeks</option>
-            <option>3 weeks</option>
-        </select>
+    <figure>
 
-        <h3>Submit &#47; Button</h3>
+        <form action="instructions.js">
+
+            <h3>Text Boxes</h3>
+
+                <label for="search-name">Product Search - Text Entry Example</label>
+                <input type="text" id="search-name" name="search-name" placeholder="Enter search name" required>
+
+                <label for="search-name">Product Search - Error State</label>
+                <input type="text" required id="search-name" name="search-name" placeholder="Entry required" class="error">
+
+                <label for="search-name">Product Search - Disabled State</label>
+                <input type="text" required id="search-name" name="search-name" placeholder="Search not available" disabled>
+
+            <h3>Text Areas</h3>
+
+                <label for="suggestion">Suggestion Box - Text Entry Example</label>
+                <textarea id="suggestion" name="suggestion" placeholder="Suggestions, comments, ideas"></textarea>
+        
+                <label for="suggestion">Suggestion Box - Error State</label>
+                <textarea id="suggestion" name="suggestion" placeholder="Error" class="error"></textarea>
+
+                <label for="suggestion">Suggestion Box - Disabled State</label>
+                <textarea id="suggestion" name="suggestion" placeholder="Not available" disabled></textarea>
+
+            <h3>Selectors</h3>
+        
+                <label for="rental-time">Rental Time - Selection</label>
+                <p class="hint-text">Check our Rental FAQ page for more information</p>
+                <select id="rental-time" name="rental-time">
+                    <option value="" selected disabled hidden>Choose</option> 
+                    <option>1 week</option>
+                    <option>2 weeks</option>
+                    <option>3 weeks</option>
+                </select>
+
+                <label for="rental-time">Rental Time - Error State</label>
+                <p class="hint-text-error">You must choose one option</p>
+                <select id="rental-time" name="rental-time" class="error">
+                    <option value="" selected disabled hidden>Choose</option> 
+                    <option>1 week</option>
+                    <option>2 weeks</option>
+                    <option>3 weeks</option>
+                </select>
+    
+                <label for="rental-time">Rental Time - Selection - Disabled</label>
+                <p class="hint-text-disabled">Selection available at this time</p>
+                <select id="rental-time" name="rental-time" disabled>
+                    <option value="" selected disabled hidden>Choose</option> 
+                    <option>1 week</option>
+                    <option>2 weeks</option>
+                    <option>3 weeks</option>
+                </select>
+
+            <h3>Submit &#47; Button</h3>
    
-        <button type="submit">Submit</button>
-    </form>
+            <button type="submit">Submit</button>
+        </form>
+        
+    </figure>
 
     <h2>Navigation</h2>
     
@@ -207,21 +211,130 @@
     <h3>Secondary Navigation Menu</h3>
     <figure>
         <nav class="secondary-nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="style.html">Style</a></li>
-            <li><a href="" class="current-page">Components</a>
-                <ul>
-                    <li><a href="">Buttons</a></li>
-                    <li><a href="">Accordions</a></li>
-                    <li><a href="">Modal Dialogs</a></li>
-                </ul>
-            </li>
-            <li><a href="layouts.html">Layout</a></li>
-        </ul>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="style.html">Style</a></li>
+                <li><a href="" class="current-page">Components</a>
+                    <ul>
+                        <li><a href="">Buttons</a></li>
+                        <li><a href="">Accordions</a></li>
+                        <li><a href="">Modal Dialogs</a></li>
+                        <li><a href="">Form Inputs</a></li>
+                        <li><a href="">Navigation</a></li>
+                        <li><a href="">Notifications</a></li>
+                        <li><a href="">Hero Block</a></li>
+                        <li><a href="">Information Cards</a></li>
+                    </ul>
+                </li>
+                <li><a href="layouts.html">Layout</a></li>
+                    <ul>
+                        <li><a href="">Card Grids</a></li>
+                        <li><a href="">Card Callouts</a></li>
+                    </ul>
+            </ul>
         </nav>
-    
     </figure>
+    
+    <h2>Notifications</h2>
+    <figure>
+        <div class="error-notification">
+            <svg id="icon-cancel" viewBox="0 0 24 24">
+                <title>cancel</title>
+                <path d="M12 4c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zM7 12c0-0.832 0.224-1.604 0.584-2.295l6.711 6.711c-0.691 0.36-1.463 0.584-2.295 0.584-2.757 0-5-2.243-5-5zM16.416 14.295l-6.711-6.711c0.691-0.36 1.463-0.584 2.295-0.584 2.757 0 5 2.243 5 5 0 0.832-0.224 1.604-0.584 2.295z"></path>
+            </svg>
+    
+            <div>
+                <h3>Error</h3>
+                <p>Something went wrong</p>
+            </div>
+        </div>
+    </figure>
+    
+    <figure>
+        <div class="warning-notification">
+            <svg id="icon-warning" viewBox="0 0 24 24">
+                <title>warning</title>
+                <path d="M21.171 15.398l-5.912-9.854c-0.776-1.293-1.963-2.033-3.259-2.033s-2.483 0.74-3.259 2.031l-5.912 9.856c-0.786 1.309-0.872 2.705-0.235 3.83 0.636 1.126 1.878 1.772 3.406 1.772h12c1.528 0 2.77-0.646 3.406-1.771 0.637-1.125 0.551-2.521-0.235-3.831zM12 17.549c-0.854 0-1.55-0.695-1.55-1.549s0.695-1.551 1.55-1.551 1.55 0.696 1.55 1.551c0 0.854-0.696 1.549-1.55 1.549zM13.633 10.125c-0.011 0.031-1.401 3.468-1.401 3.468-0.038 0.094-0.13 0.156-0.231 0.156s-0.193-0.062-0.231-0.156l-1.391-3.438c-0.090-0.233-0.129-0.443-0.129-0.655 0-0.965 0.785-1.75 1.75-1.75s1.75 0.785 1.75 1.75c0 0.212-0.039 0.422-0.117 0.625z"></path>
+            </svg>
+            
+            <div>
+                <h3>Warning</h3>
+                <p>Watch out!</p>
+            </div>
+        </div>
+    </figure>
+
+    <figure>
+        <div class="neutral-notification">
+            <svg id="icon-info" viewBox="0 0 24 24">
+                <title>info</title>
+                <path d="M21.171 15.398l-5.912-9.854c-0.776-1.293-1.963-2.033-3.259-2.033s-2.483 0.74-3.259 2.031l-5.912 9.856c-0.786 1.309-0.872 2.705-0.235 3.83 0.636 1.126 1.878 1.772 3.406 1.772h12c1.528 0 2.77-0.646 3.406-1.771 0.637-1.125 0.551-2.521-0.235-3.831zM12 8.449c0.854 0.002 1.549 0.698 1.551 1.55 0 0.853-0.695 1.549-1.55 1.551-0.854-0.002-1.55-0.698-1.552-1.55 0-0.855 0.696-1.551 1.551-1.551zM13.69 16.91c-0.032 0.037-0.795 0.918-2.068 0.918-0.051 0-0.103-0.001-0.154-0.004-0.508-0.030-0.928-0.255-1.185-0.634-0.315-0.465-0.358-1.113-0.121-1.825l0.406-1.221c0.225-0.683 0.010-0.792-0.106-0.85-0.031-0.016-0.080-0.025-0.14-0.025-0.251 0-0.597 0.148-0.708 0.206-0.104 0.054-0.235 0.026-0.311-0.067-0.073-0.095-0.071-0.227 0.007-0.318 0.033-0.039 0.867-0.995 2.223-0.914 0.505 0.029 0.925 0.253 1.182 0.631 0.316 0.465 0.36 1.114 0.124 1.828l-0.406 1.221c-0.227 0.682-0.010 0.792 0.106 0.85 0.020 0.010 0.062 0.023 0.137 0.023 0.254 0 0.6-0.148 0.712-0.205 0.106-0.056 0.235-0.026 0.31 0.068 0.072 0.095 0.070 0.227-0.008 0.318z"></path>
+            </svg>
+            
+            <div>
+                <h3>Message</h3>
+                <p>Information for you</p>
+            </div>
+        </div>
+    </figure>
+    
+    <figure>
+        <div class="success-notification">
+            <svg id="icon-star" viewBox="0 0 24 24">
+                <title>star</title>
+                <path d="M9.362 9.158c0 0-3.16 0.35-5.268 0.584-0.19 0.023-0.358 0.15-0.421 0.343s0 0.394 0.14 0.521c1.566 1.429 3.919 3.569 3.919 3.569-0.002 0-0.646 3.113-1.074 5.19-0.036 0.188 0.032 0.387 0.196 0.506 0.163 0.119 0.373 0.121 0.538 0.028 1.844-1.048 4.606-2.624 4.606-2.624s2.763 1.576 4.604 2.625c0.168 0.092 0.378 0.090 0.541-0.029s0.232-0.318 0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191s2.353-2.14 3.919-3.566c0.14-0.131 0.202-0.332 0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375 0.122-0.453 0.294c-0.874 1.932-2.183 4.83-2.183 4.83z"></path>
+            </svg>
+            
+            <div>
+                <h3>Success</h3>
+                <p>You did it!</p>
+            </div>
+        </div>
+    </figure>
+    
+    <h2>Hero Block</h2>
+    
+    <figure>
+        <p><a href="hero.html"><img src="images/screenshot-hero-block.png" alt="hero-block-example" title="hero-block-example"></a></p>
+    </figure>
+
+    <h2>Information Cards</h2>
+    
+    <h3>Article Cards</h3>
+        <figure>
+            
+            <div class="article-card">
+                <img src="images/toolbox.jpeg">
+                <h4><a href="">Article or Blog Post</a></h4>
+                <p class=featurecopy>This card is for articles and blog posts, and this is what an excerpt of text would look like. </p>
+                <cite>May 1, 2018</cite>
+            </div>
+                
+        </figure>
+    
+    <h3>Profile Cards</h3>
+        <figure>
+            <div class="profile-card">
+                <img src="images/portrait.jpeg">
+            
+                <h4>Jenny Gibson</h4>
+                <p>Customer Service Representative</p>
+                <h5>512-555-5555</h><h5>jennyg@toolshed.com</h5>
+            </div>
+        </figure>
+    
+    <h3>Call to Action Cards</h3>
+        <figure>
+            
+            <div class="card-action card-enroll">
+                <div class="action-textarea">
+                    <h2>Have a Great Idea?</h2>
+                    <p class="slogan">Start building it today with 25% off your first order!</p>
+                    <a class="button-link-primary button-action" href="#">Sign Up</a>
+                </div>
+            </div>
+        
+        </figure>
     
 </main>
     
