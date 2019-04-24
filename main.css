@@ -1,3 +1,4 @@
+
 /* ==========================================================================
    Colors
    ========================================================================== */
@@ -65,7 +66,7 @@ detail {
 .button-link-primary, .button-link-primary:visited {
     background-color: var(--color-primary-red);
 	border: 3px solid var(--color-primary-red);
-	box-shadow: .25rem .25rem rgba(255, 255, 255, .5);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
     color: white;
 	display: inline-block;
     font-size: var(--size-one);
@@ -95,14 +96,13 @@ detail {
 .button-link-primary:active {
     background-color: var(--color-secondary-red);
 	border: 3px solid var(--color-secondary-red);
-    /*transform: translateY(3px);*/
     top: 3px;
 }
 
 .button-link-secondary {
     background-color: var(--color-primary-blue);
     border: 3px solid var(--color-primary-blue);
-    box-shadow: .25rem .25rem rgba(255, 255, 255, .5);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
     color: white;
     display: inline-block;
     font-size: var(--size-one);
@@ -131,14 +131,13 @@ detail {
 .button-link-secondary:active {
     background-color: var(--color-secondary-blue);
     border: 3px solid var(--color-secondary-blue);
-    /*transform: translateY(3px);*/
     top: 3px;
 }
 
 .button-link-tertiary {
     background-color: var(--color-primary-brown);
     border: 3px solid var(--color-primary-brown);
-    box-shadow: .25rem .25rem rgba(255, 255, 255, .5);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
     color: white;
     display: inline-block;
     font-size: var(--size-one);
@@ -167,7 +166,6 @@ detail {
 .button-link-tertiary:active {
     background-color: var(--color-secondary-brown);
     border: 3px solid var(--color-secondary-brown);
-    /*transform: translateY(3px);*/
     top: 3px;
 }
 
@@ -342,24 +340,31 @@ input::placeholder, textarea::placeholder {
 }
 
 button[type="submit"], input[type="submit"] {
-    background-color: green;
+    background-color: var(--color-primary-blue);
     border: none;
-    box-shadow: .25rem .25rem rgba(255, 255, 255, .5);
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4);
     color: white;
     display: block;
     font-size: var(--size-one);
     font-weight: 700;
-    height: 2.5rem;
-    margin: 1.25rem;
-	padding: .75rem 1rem;
-    position: relative;
+    margin: 2rem;
+	padding: 1rem 2rem;
     text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
 }
 
 button:hover {
-    background-color: darkgreen;
+    background-color: var(--color-secondary-blue);
+}
+
+button:active {
+    background-color: var(--color-secondary-brown);
+}
+
+button:focus {
+    background-color: var(--color-secondary-red);
+    outline: 6px solid var(--color-secondary-blue);
 }
 
 button:active {
@@ -498,6 +503,18 @@ ol ol li {
 .tertiarycopy, figcaption{
     font-size: var(--size-minimum);
     font-weight: 300;
+}
+
+.persona {
+    font-size: var(--size-three);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.contact {
+    color: white;
+    font-size: var(--size-minimum);
+    line-height: 1;
 }
 
 
@@ -696,6 +713,19 @@ button-link-primary .button-link-action {
     margin-left: 1rem;
     margin-right: 1.5rem;
 }
+
+.card-colorblock-about p {
+    background-color: var(--color-primary-blue);
+    color: white;
+    display: inline-block;
+    font-size: 2vw;
+    font-weight: 600;
+    margin: 0;
+    max-width: 24rem;
+    padding: .75rem;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, .7);
+}
+
 
 /* ==========================================================================
    Card-Grid
@@ -1126,7 +1156,7 @@ footer li {
     
     .site-navigation a {
         font-size: var(--size-three);
-        font-weight: 700;
+        font-weight: 900;
     }
     
     .secondary-nav a {
@@ -1174,7 +1204,6 @@ footer li {
     
     .site-navigation a {
         font-size: var(--size-four);
-        font-weight: 900;
     }
     
     .site-navigation li {
